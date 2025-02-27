@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 /**
  * Randomly selects the computer's choice for the game and returns it.
  * @returns {string} Randomly selected option (rock, paper, scissors).
@@ -37,6 +40,31 @@ function getHumanChoice() {
   }
   // RETURN choice
   return choice;
+}
+
+/**
+ * Takes the user's choice and the computer's choice and compares them, increments the winner's score and displays a winner announcement.
+ * @param {string} humanChoice The user's choice for the round.
+ * @param {string} computerChoice The computer's choice for the round.
+ */
+function playRound(humanChoice, computerChoice) {
+  // INIT a variable "winner" to store the round's winner
+  // IF humanChoice is the same as computerChoice THEN
+  //    SET winner to "none"
+  // ELSE IF humanChoice is "rock" and computerChoice is "scissors", or humanChoice is "paper" and computerChoice is "rock", or humanChoice is "scissors" and computerChoice is "paper" THEN
+  //    SET winner to "human"
+  // ELSE
+  //    SET winner to "computer"
+  // ENDIF
+  /*
+  CASE winner OF
+    "none" : PRINT "This is a draw!"
+    "human" : PRINT "Congratulations, you won!"
+              INCREMENT humanScore
+    "computer" : PRINT "Too bad, you lost!"
+                 INCREMENT computerScore
+  */
+ // PRINT scores 
 }
 
 console.log(getComputerChoice());
