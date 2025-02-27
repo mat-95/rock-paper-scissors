@@ -28,10 +28,16 @@ function getComputerChoice() {
  */
 function getHumanChoice() {
   // INIT a variable "choice" to store the user's choice
+  let choice = "";
   // WHILE choice is not rock, paper or scissors
-  //  PROMPT user to enter a choice between rock, paper and scissors
-  // ENDWHILE
-  // RETURN choice  
+  while (!["rock", "paper", "scissors"].includes(choice)) {
+    //  PROMPT user to enter a choice between rock, paper and scissors
+    choice = prompt("Please enter a choice between: rock, paper and scissors!");
+    // ENDWHILE
+  }
+  // RETURN choice
+  return choice;
 }
 
 console.log(getComputerChoice());
+console.log(getHumanChoice());
