@@ -35,7 +35,7 @@ function getHumanChoice() {
   // WHILE choice is not rock, paper or scissors
   while (!["rock", "paper", "scissors"].includes(choice)) {
     //  PROMPT user to enter a choice between rock, paper and scissors
-    choice = prompt("Please enter a choice between: rock, paper and scissors!");
+    choice = prompt("Please enter a choice between: rock, paper and scissors!").toLowerCase();
     // ENDWHILE
   }
   // RETURN choice
@@ -49,13 +49,25 @@ function getHumanChoice() {
  */
 function playRound(humanChoice, computerChoice) {
   // INIT a variable "winner" to store the round's winner
+  let winner = "";
   // IF humanChoice is the same as computerChoice THEN
-  //    SET winner to "none"
+  if (humanChoice === computerChoice) {
+    //    SET winner to "none"
+    winner = "none";
+  }
   // ELSE IF humanChoice is "rock" and computerChoice is "scissors", or humanChoice is "paper" and computerChoice is "rock", or humanChoice is "scissors" and computerChoice is "paper" THEN
-  //    SET winner to "human"
+  else if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")) {
+    //    SET winner to "human" 
+    winner = "human";
+  }
   // ELSE
-  //    SET winner to "computer"
+  else {
+    //    SET winner to "computer"
+    winner = "computer";
+  }
   // ENDIF
+  // DISPLAY the human's and the computer's choices
+  console.log(`You chose: ${humanChoice}. The computer chose: ${computerChoice}.`);
   /*
   CASE winner OF
     "none" : PRINT "This is a draw!"
@@ -64,8 +76,22 @@ function playRound(humanChoice, computerChoice) {
     "computer" : PRINT "Too bad, you lost!"
                  INCREMENT computerScore
   */
- // PRINT scores 
+  switch (winner) {
+    case "none":
+      console.log("This is a draw");
+      break;
+    case "human":
+      console.log("Congratulations, you won!");
+      humanScore++;
+      break;
+    case "computer":
+      console.log("Too bad, you lost!");
+      computerScore++;
+      break;
+  }
+ // PRINT scores
+ console.log(`Your score is: ${humanScore}. The computer's score is: ${computerScore}`);
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+// Play a round of Rock Paper Scissors
+playRound(getHumanChoice(), getComputerChoice());
