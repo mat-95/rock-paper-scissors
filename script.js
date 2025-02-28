@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 /**
  * Randomly selects the computer's choice for the game and returns it.
  * @returns {string} Randomly selected option (rock, paper, scissors).
@@ -91,6 +88,23 @@ function playRound(humanChoice, computerChoice) {
   }
  // PRINT scores
  console.log(`Your score is: ${humanScore}. The computer's score is: ${computerScore}`);
+}
+
+function playGame() {
+  // INIT humanScore variable to store the score of the user
+  let humanScore = 0;
+  // INIT computerScore variable to store the score of the computer
+  let computerScore = 0;
+  // INIT round variable to keep track of the current round
+  // WHILE round is less then or equal to 5
+  //    PRINT round
+  //    CALL function playRound() with getHumanChoice() and getComputerChoice() as arguments
+  // ENDWHILE
+  // PRINT scores
+  // IF humanScore is greater than computerScore
+  //    PRINT winning message
+  // ELSE
+  //    PRINT loosing message
 }
 
 // Play a round of Rock Paper Scissors
